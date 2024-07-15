@@ -41,6 +41,10 @@
     main> section{
         margin-top: 130px;
     }
+    .section-title{
+        font-size: 2.8rem;
+        font-weight: 700;
+    }
 /* header styles */
 
 /* navbar related style */
@@ -97,32 +101,87 @@
     margin-left: 130px;
     max-width: 530px;
 }
-.feature-title{
-    font-size: 2.8rem;
-    font-weight: 700;
-}
+
 #quick-list{
     font-weight: 500;
 }
 .feature-description{
     margin-bottom: 24px;
 }
-/* 1st responsive media query */
+
+/* some fact related style */
+.facts-container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+.fact-description{
+    width: 540px;
+    margin-bottom: 100px;
+    margin-top: 24px;
+    
+}
+.fact-card{
+    border: 1px solid #FF900E;
+    border-radius: 6px;
+    width: 240px;
+    height: 240px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.fact-number{
+    font-size: 2.8rem;
+    font-weight: 600;
+    margin-top: 5px;
+    margin-bottom: 10px;
+
+}
+.fact-name{
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+/* sponsor related style */
+.sponsor-info{
+    max-width: 540px;
+    margin: 50px auto;
+    text-align: center;
+}
+.sponsors-companies{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+.sponsors-companies img{
+    filter: grayscale(100%);
+}
+/* 1st responsive for mobile media query */
 @media screen and (max-width: 576px) {
     .navbar, 
     .nav-links,
-    .teams 
-    {
+    .teams{
         flex-direction: column;
-        
     }
-    .team-img-container{
-        grid-template-columns: repeat(1, 1fr);
+    .team-img-container, 
+    .facts-container,
+    .sponsors-companies{
+        grid-template-columns: 1fr;
     }
-    .our-feature{
+    .our-feature
+    {
         margin-left: 20px;
     }
+    .facts-container{
+        justify-items: center;
+        gap: 24px;
+    }
+    .sponsors-companies{
+        justify-items: center;
+        gap: 50px;
+    }
 }
+
+
 /* medium device responsive query */
 @media screen and (min-width: 576px) and (max-width: 992px) {
     .teams 
@@ -130,7 +189,14 @@
         flex-direction: column;
         
     } 
-    .our-feature {
+    .our-feature
+    {
         margin: 20px auto;
     }
+   .sponsors-companies, 
+   .facts-container{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+    justify-items: center;
+   }
 }
